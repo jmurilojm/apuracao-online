@@ -35,7 +35,7 @@
       width: 90%;
       padding: 5px 10px;
       margin: auto;
-      display: none;
+      display: noe;
     }
 
     div {
@@ -46,14 +46,18 @@
       color: white;
       text-align: center;
       margin: 0 0 20px 0;
+      position: relative;
     }
 
     main div span {
       color: blue;
-      background: white;
+      background: transparent;
       font-size: 10px;
-      position: fixed;
-      left: 20px;
+      position: absolute;
+      left: 50px;
+      width: 70vw;
+      margin: 10px 0;
+      
     }
 
     img {
@@ -65,33 +69,65 @@
       text-align: center;
       margin-top: 100px;
       color: red;
+      display: none;
+    }
+    ul{
+      padding: 20px;
+    }
+    li{
+      font-size: 10px;
+    }
+    h3{
+     text-align: center;
+     color: white;
+     background: darkblue;
     }
   </style>
 </head>
 
 <body>
   <h1><img src="logo.png" alt="Logo não oficial da GCM Arcoverde PE">Apuração</h1>
-  <h6>Última atualização: 13:44</h6>
+  <h6>Última atualização: 18:09</h6>
   <h4>Total de Votos Apurados: <span id="apuracao">0</span></h4>
   <main>
     <!--<div><span>0.0</span></div>-->
   </main>
-  <h2>Aguarde o encerramento (18:00 horas, 18/01). <br><br>Foi só uma parcial. kkk...</h2>
+  <h2>Aguarde às 18:00 horas. <br><br>Foi só uma parcial. kkk...</h2>
+  
+  <section>
+    <h3>Participaram da Votação</h3>
+    
+    <ul></ul>
+  </section>
+  
+  <section>
+    <h3>Ordem de Preferência</h3>
+    
+    <ul>
+      <li><strong>13 pts de Preferência para o 1º lugar: </strong>Alessandro Lessa Rodrigues</li>
+      <li><strong>12 pts de Preferência para o 2º lugar: </strong>Ednaldo de Lima</li>
+      <li><strong>05 pts de Preferência para o 3º lugar: </strong>Henrique Dantas</li>
+      <li><strong>06 pts de Preferência para o 4º lugar: </strong>Érico Monteiro</li>
+      <li><strong>06 pts de Preferência para o 5º lugar: </strong>Eder Rocha</li>
+      <li><strong>08 pts de Preferência para o 6º lugar: </strong>André Soares</li>
+      <li><strong>07 pts de Preferência para o 7º lugar: </strong>Jhony Weslly</li>
+    </ul>
+  </section>
 
   <script>
-    const votos = [23, 22, 20, 19, 19, 15, 14, 13, 13, 13, 4];
+    const votos = [37, 34, 33, 30, 25, 23, 23, 21, 19, 17, 11];
     const nomes = [
-      'Alessandro Lessa Rodrigues',
-      'Ednaldo de Lima', 
-      'Érico Monteiro',
-      'Eder da Rocha', 
-      'Henrique Dantas', 
-      'Micael Thiago Santos Feitosa',
-      'José Ladjane Mendes e Silva',
-      'André Soares', 
-      'Karl Francis', 
-      'Jhonny Weslly', 
-      'Francimario'
+      `Alessandro Lessa Rodrigues = ${votos[0]} votos`,
+      `Ednaldo de Lima = ${votos[1]} votos`, 
+      `Érico Monteiro= ${votos[2]} votos`,
+      `Henrique Dantas= ${votos[3]} votos`,
+      `Eder da Rocha= ${votos[4]} votos`, 
+      `André Soares= ${votos[5]} votos`, 
+      `Karl Francis= ${votos[6]} votos`, 
+      `José Ladjane Mendes e Silva= ${votos[7]} votos`,
+      `Micael Thiago Santos Feitosa= ${votos[8]} votos`,
+      `Jhonny Weslly= ${votos[9]} votos`, 
+      `Francimario= ${votos[10]} votos`
       ]
     let soma = 0;
 
@@ -112,7 +148,6 @@
 
       div.appendChild(span)
       main.appendChild(div);
-      document.querySelector('#apuracao').textContent = 25;
     }
     
     for(let i=0; i<main.children.length; i++){
@@ -121,6 +156,56 @@
       } else{
         main.children[i].style.backgroundColor = 'red'
       }
+    }
+    
+    
+    const participantes = [
+      'Jose Keydson',
+'Diego Henrique',
+'JA Soares',
+'Pablo Mascena Alencar',
+'Waldecy Correia de Albuquerque',
+'Willians Calixto',
+'Gabriella Guimarães',
+'Karl Francis dos santos araujo',
+'Lucas José',
+'Ladjane Mendes',
+'Gabriel Filipe',
+'Érico Monteiro',
+'Edson Fábio',
+'Joyce Freire',
+'Jhonny Wesley',
+'Jozildo Júnior',
+'Fran Gonçalves',
+'eric michel',
+'Fred Lucas',
+'Leandro Melo',
+'Jeferson Gomes',
+'Raul Henrique',
+'Jab Andrade',
+'Micael Santos',
+'Ednaldo de lima Pereira',
+'Natalia Silva',
+'Elizangelo Antonio Da silva',
+'Severino Bernardo',
+'Jeanderson Da Silva Carvalho',
+'Fábio Liberato',
+'D Fer',
+'Emanoel Angelo',
+'José Bruno',
+'anaclecio de frança bezerra da Silva',
+'Samyr Vitório',
+'Darlan Barbosa',
+'Claudinho Henrique',
+'ademilson andre',
+'Andréia Cavalcanti'
+]
+    const ul = document.querySelector('ul')
+    document.querySelector('#apuracao').textContent = participantes.length;
+    for(let i=0; i<participantes.length; i++){
+      const li = document.createElement('li')
+      li.textContent = participantes[i]
+      ul.appendChild(li)
     }
   </script>
 </body>
