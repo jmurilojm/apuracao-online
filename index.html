@@ -64,15 +64,27 @@
 
 <body>
   <h1><img src="logo.png" alt="Logo não oficial da GCM Arcoverde PE">Apuração</h1>
-  <h6>Última atualização: 00:00</h6>
+  <h6>Última atualização: 13:44</h6>
   <h4>Total de Votos Apurados: <span id="apuracao">0</span></h4>
   <main>
     <!--<div><span>0.0</span></div>-->
   </main>
 
   <script>
-    const votos = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-    const nomes = ['Alessandro Lessa Rodrigues', 'André Soares', 'Eder da Rocha', 'Ednaldo de Lima', 'Érico Monteiro', 'Francimario', 'Henrique Dantas', 'Jhonny Weslly', 'José Ladjane Mendes e Silva', 'Karl Francis', 'Micael Thiago Santos Feitosa']
+    const votos = [23, 22, 20, 19, 19, 15, 14, 13, 13, 13, 4];
+    const nomes = [
+      'Alessandro Lessa Rodrigues',
+      'Ednaldo de Lima', 
+      'Érico Monteiro',
+      'Eder da Rocha', 
+      'Henrique Dantas', 
+      'Micael Thiago Santos Feitosa',
+      'José Ladjane Mendes e Silva',
+      'André Soares', 
+      'Karl Francis', 
+      'Jhonny Weslly', 
+      'Francimario'
+      ]
     let soma = 0;
 
     for (let i = 0; i < votos.length; i++) {
@@ -92,7 +104,15 @@
 
       div.appendChild(span)
       main.appendChild(div);
-      document.querySelector('#apuracao').textContent = soma;
+      document.querySelector('#apuracao').textContent = 25;
+    }
+    
+    for(let i=0; i<main.children.length; i++){
+      if(i < 7){
+        main.children[i].style.backgroundColor = 'green'
+      } else{
+        main.children[i].style.backgroundColor = 'red'
+      }
     }
   </script>
 </body>
